@@ -22,7 +22,7 @@ export const auth = async (req,res,next)=>{
     const token = authorization.split(process.env.BEARERKEY)[1];
     const decoded = await jwt.verify (token, process.env.LOGINSIG);
 
-    const authUser = await userModel.findById(decoded._id).select('name');
+    const authUser = await userModel.findById(decoded._id);
     req.user = authUser;
     next();
 } 
