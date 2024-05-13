@@ -16,7 +16,7 @@ export const validation = (schema)=>{
             return res.status(400).json({message:"validation error", validationArray});
         }
         next();
-        // طريقة المسخرة - مهندس طارق
+        // old ver
         // const validationArray = [];
         // if(schema.body){
         //     const validatebody = schema.body.validate(req.body,{abortEarly:false});
